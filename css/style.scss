@@ -1,0 +1,189 @@
+@import './_global';
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Montserrat:ital,wght@0,300;1,300&family=Raleway:ital,wght@1,200;1,400&family=Roboto:ital@1&display=swap');
+ 
+  :root {
+    --lato: "Lato", sans-serif;
+    --lora: "Lora", serif;
+    --monester: "Montserrat", sans-serif;
+    --real: "Raleway", sans-serif;
+    --roboto: "Roboto", sans-serif;
+  }
+  @mixin card (){
+     
+    width: 100%;
+    padding: 4rem 0;
+  }
+  @mixin grid ($repeat){
+    display: grid;
+    grid-template-columns: $repeat ;
+    gap: 3rem;
+  }
+
+  @mixin title ( ){
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  @mixin btn ($bgc, $first, $bgchover, $color) {
+    padding: 15px 20px;
+    background-color: $bgc;
+    color: $first;
+    font-size: 1.3rem;
+    border: 0 ;
+    transition: all 0.5s linear;
+    &:hover{
+        background-color: $bgchover;
+        color: $color;
+      
+    }
+  }
+
+.header{
+    width: 100%;
+    height: 100%;
+   
+
+}
+.navigation{
+    width: 100%;
+    height: 16vh;
+    background-color: rgb(27, 27, 80);
+  
+}
+.navbar{
+    height: 16vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+img{
+    width: 75%;
+}
+.navbar__nav a,i{
+    color: white;
+    margin-left: 2px;
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+ .banner{
+    width: 100%;
+    height: 85vh;
+    background-image: url(/images/banner.jpg);
+    display: flex;
+   
+    background-size: cover;
+  .banner__content{
+    color: aliceblue;
+    width: 90%;
+    margin-left: 5rem;
+
+    @include grid(90% 10%);
+    .item{
+
+
+      h2{
+        font-size: 2rem;
+        font-family: var(--monester);
+        margin-top: 10rem;
+      }
+      h1{
+        font-size: 2.5rem;
+        font-family: var(--monester);
+        font-weight: 900;
+      }
+      p{
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+        margin-right: 23rem;
+      
+      }
+      button{
+        @include btn(rgb(14, 118, 187), white,rgb(14, 118, 187),black )
+        
+      }
+    }
+
+
+  }
+
+    
+ }
+ 
+     .welcome{
+      @include card();
+
+      .welcom__content{
+        @include grid(repeat(2,1fr));
+        .item{
+          h3{
+            font-size: 2rem;
+            border-bottom: 1px  solid rgb(20, 99, 13);
+            display: inline;
+            margin-bottom: 1.5rem;
+            color: rgb(0, 72, 139);
+          }
+          h2{
+            margin-top: 1.4rem;
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+          }
+          p{
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-family: var(--real);
+            margin-right: 5rem;
+          }
+          button{
+            font-size: 1.2rem;
+            margin-top: 1.4rem;
+            border: none;
+            font-family: var(--roboto);
+
+          }
+        }
+
+      }
+     }
+
+     .service{
+      @include card();
+      text-align: center;
+      @include title();
+      text-align-last: left;
+      h3{
+        font-size: 2rem;
+        color: rgb(26, 65, 190);
+        border-bottom: 1px  solid rgb(20, 99, 13);
+        display: inline;
+      }
+      h2{
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
+      .img{
+        position: relative
+      }
+
+      .service__content{
+        .item1{
+          @include grid(40%, 50%);
+          margin-left: 10rem;
+          margin-right: 10rem;
+          gap: 0;
+          position: relative;
+        }
+        .img__hover{
+          h3{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            opacity: 0;
+            background-color: blue;
+          }
+        }
+      }
+     }
